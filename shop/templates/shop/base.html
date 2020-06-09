@@ -58,7 +58,7 @@
                     {% if user.is_authenticated%}
                     <li><a href="{% url 'logout' %}"> Logout </a></li>
                     <li><a href="{% url 'dashboard' %}">Dashboad</a></li>
-                    <p class='text-success ml-3'>{{ user }}, logged in</p>
+                    <p class='text-success text-capitalize ml-3'>{{ user }}, logged in</p>
                     {% else %}
                     <a href="{% url 'login' %}"><i class="fa fa-user mr-2"> Login</i></a>
                     <a href="{% url 'register' %}"><i class="fa fa-user-plus"> Register</i></a>
@@ -132,14 +132,18 @@
                 <div class="col-md-3 w3_footer_grid">
                     <h3>Information</h3>
                     <ul class="info">
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">About Us</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="contact.html">Contact Us</a>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{% url 'shop:about' %}">About
+                                Us</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                                href="{% url 'shop:contact' %}">Contact Us</a>
                         </li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="short-codes.html">Short
-                                Codes</a>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{% url 'shop:salon' %}">
+                                Salon</a>
                         </li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="faq.html">FAQ's</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Special
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{% url 'shop:faq' %}">FAQ's</a>
+                        </li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                                href="{% url 'shop:product_list' %}">Special
                                 Products</a>
                         </li>
                     </ul>
@@ -147,25 +151,32 @@
                 <div class="col-md-3 w3_footer_grid">
                     <h3>Category</h3>
                     <ul class="info">
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="groceries.html">Groceries</a>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                                href="{% url 'shop:product_list' %}">Groceries</a>
                         </li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="household.html">Household</a>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                                href="{% url 'shop:product_list' %}">Household</a>
                         </li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="personalcare.html">Personal
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                                href="{% url 'shop:product_list' %}">Personal
                                 Care</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="packagedfoods.html">Packaged
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                                href="{% url 'shop:product_list' %}">Packaged
                                 Foods</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="beverages.html">Beverages</a>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                                href="{% url 'shop:product_list' %}">Beverages</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-3 w3_footer_grid">
                     <h3>Profile</h3>
                     <ul class="info">
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Store</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                                href="{% url 'shop:product_list' %}">Store</a></li>
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">My Cart</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.html">Login</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="registered.html">Create
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{% url 'register' %}">Create
                                 Account</a>
                         </li>
                     </ul>

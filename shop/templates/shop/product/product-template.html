@@ -13,8 +13,8 @@
             <img class="card-img-top pt-3" src="{% static 'img/no_image.png' %}" alt="no product image">
             {% endif %}
             <div class="card-body">
-                <h3 class="card-title">{{ product.name }}</h3>
-                <p class="card-text">{{ product.content }}</p>
+                <h3 class="card-title text-uppercase">{{ product.name }}</h3>
+                <p class="card-text text-capitalize">{{ product.content }}</p>
                 <a href="#" class=" btn-light mb-2">
                     <h3>{{ product.price }} SEK</h3>
                 </a>
