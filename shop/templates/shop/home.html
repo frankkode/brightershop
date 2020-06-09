@@ -1,42 +1,700 @@
 {% extends "shop/base.html" %}
+
 {% load static %}
 
 {% block content %}
-<br>
-<div class="container px-0" >
-    <img class="img-fluid" src="{% static 'img/banner2.jpg' %}" alt="banner_image">
-</div>
-<br>
+<header>
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<!-- Slide One - Set the background image for this slide in the line below -->
+			<div class="carousel-item active"
+				style="background-image: url('https://source.unsplash.com/KfvknMhkmw0/1920x1080')">
+				<div class="carousel-caption d-none d-md-block">
+					<h1 class="display-4">Welcome to Brighter Shop</h1>
+					<p class="lead">Our Prices Are Very Competitive.</p>
+				</div>
+			</div>
+			<!-- Slide Two - Set the background image for this slide in the line below -->
+			<div class="carousel-item"
+				style="background-image: url('https://source.unsplash.com/SvhXD3kPSTY/1920x1080')">
+				<div class="carousel-caption d-none d-md-block">
+					<h1 class="display-4">Beverages</h1>
+					<p class="lead">W e have Different Drinks</p>
+				</div>
+			</div>
+			<!-- Slide Three - Set the background image for this slide in the line below -->
+			<div class="carousel-item"
+				style="background-image: url('https://source.unsplash.com/-ucnC7PMDqE/1920x1080')">
 
-<div class="container">
-    <hr>
-    <h2 class="text-center green">Bestsellers</h2>
-    <hr>
+				<div class="carousel-caption d-none d-md-block">
+					<h3 class="display-4">Barber Shop Is Open</h3>
+					<p class="lead">We do all braid style</p>
+				</div>
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+</header>
+
+
+
+<!-- main-slider-->
+
+
+<!--//main-slider -->
+<!-- //top-header and slider -->
+<!-- top-brands -->
+<div class="top-brands">
+	<div class="container">
+		<h2>Top selling & offers</h2>
+		<div class="grid_3 grid_5">
+			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+				<ul id="myTab" class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#expeditions" id="expeditions-tab" role="tab"
+							data-toggle="tab" aria-controls="expeditions" aria-expanded="true">On Sherves</a>
+					</li>
+					<li role="presentation"><a href="#tours" role="tab" id="tours-tab" data-toggle="tab"
+							aria-controls="tours">Meet & Fish</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tab-pane fade in active" id="expeditions"
+						aria-labelledby="expeditions-tab">
+						<div class="agile-tp">
+							<h5>We sell Quality</h5>
+							<p class="w3l-ad">We've pulled together all our advertised offers into one place, so you
+								won't miss out on a great deal.</p>
+						</div>
+						<div class="agile_top_brands_grids">
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
+																src="{% static 'images/1.png' %}" /></a>
+														<p>Tata-salt</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+														<h4>$20.99 <span>$35.00</span></h4>
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
+																src="{% static 'images/2.png' %}" /></a>
+														<p>Fortune-sunflower</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img
+																src="{% static 'images/3.png' %}" alt=" "
+																class="img-responsive" /></a>
+														<p>Aashirvaad-atta</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="agile_top_brands_grids">
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
+																src="{% static 'images/4.png' %}" /></a>
+														<p>Sampann-toor-dal</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
+																src="{% static 'images/5.png' %}" /></a>
+														<p>Parryss-sugar</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star gray-star" aria-hidden="true"></i>
+														</div>
+
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img
+																src="{% static 'images/6.png' %}" alt=" "
+																class="img-responsive" /></a>
+														<p>Saffola-gold</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+
+													</div>
+
+
+												</div>
+											</figure>
+										</div>
+
+
+
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="tours" aria-labelledby="tours-tab">
+						<div class="agile-tp">
+							<h5>This week</h5>
+							<p class="w3l-ad">We've pulled together all our advertised offers into one
+								place, so you
+								won't miss out on a great deal.</p>
+						</div>
+						<div class="agile_top_brands_grids">
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
+																src="{% static 'images/7.png' %}" /></a>
+														<p>Sona-masoori-rice</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
+																src="{% static 'images/8.png' %}" /></a>
+														<p>Milky-mist-paneer</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img
+																src="{% static 'images/9.png' %}" alt=" "
+																class="img-responsive" /></a>
+														<p>Basmati-Rice</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="agile_top_brands_grids">
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
+																src="{% static 'images/10.png' %}" /></a>
+														<p>Fortune-sunflower</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
+																src="{% static 'images/12.png' %}" /></a>
+														<p>Nestle-a-slim</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 top_brand_left">
+								<div class="hover14 column">
+									<div class="agile_top_brand_left_grid">
+										<div class="agile_top_brand_left_grid_pos">
+											<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive" />
+										</div>
+										<div class="agile_top_brand_left_grid1">
+											<figure>
+												<div class="snipcart-item block">
+													<div class="snipcart-thumb">
+														<a href="{% url 'shop:product_list' %}"><img
+																src="{% static 'images/13.png' %}" alt=" "
+																class="img-responsive" /></a>
+														<p>Bread-sandwich</p>
+														<div class="stars">
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+															<i class="fa fa-star blue-star" aria-hidden="true"></i>
+
+														</div>
+
+													</div>
+
+												</div>
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-{% include 'shop/product/product-template.html' %}
-<br>
-<div class="container">
-    <hr>
-    <div class="row">
-        <div class="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
-            <img class="img-fluid" src="{% static 'img/banner_4.png' %}" alt="image">
-        </div>
-        <div class="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
-            <div class="container text-left mt-3">
-                <h3>Seasonal Support</h3>
-                <h4>Support for every season</h4>
-                <hr>
-                <p>You are often among people and on the road. Whether in crowded public transport, in the office, or
-                    outdoors in all weathers : With LR LIFETAKT Seasonal Support you get the support your body needs. So
-                    you can enjoy every season to the full.</p>
-                <p>Aloe Vera Drinking Gel Immune Plus strengthens existing immune cells, activates the immune system and
-                    supports its function. 85% Aloe vera gel enriched with ginger, lemon and vitamin C, zinc and
-                    selenium provide triple power for your immune system.1In addition: Colostrum Capsules2. They contain
-                    the first milk of the cow, which already provides the calf with everything it needs. Two companions
-                    – especially if you are often on the road with others..</p>
-            </div>
-        </div>
-    </div>
+<!-- //top-brands -->
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+			<a href="{% url 'shop:product_list' %}"> <img class="first-slide" src="{% static 'images/b1.jpg' %}"
+					alt="First slide" style="width: 100%;"></a>
+
+		</div>
+		<div class="item">
+			<a href="{% url 'shop:product_list' %}"> <img class="second-slide " src="{% static 'images/b3.jpg' %}"
+					alt="Second slide" style="width: 100%;"></a>
+
+		</div>
+		<div class="item">
+			<a href="{% url 'shop:product_list' %}"><img class="third-slide " src="{% static 'images/b1.jpg' %}"
+					alt="Third slide" style="width: 100%;"></a>
+
+		</div>
+	</div>
+
+</div><!-- /.carousel -->
+<!--banner-bottom-->
+<div class="ban-bottom-w3l">
+	<div class="container">
+		<div class="col-md-6 ban-bottom3">
+			<div class="ban-top">
+				<img src="{% static 'images/p2.jpg' %}" class="img-responsive" alt="" />
+
+			</div>
+			<div class="ban-img">
+				<div class=" ban-bottom1">
+					<div class="ban-top">
+						<img src="{% static 'images/p3.jpg' %}" class="img-responsive" alt="" />
+
+					</div>
+				</div>
+				<div class="ban-bottom2">
+					<div class="ban-top">
+						<img src="{% static 'images/p4.jpg' %}" class="img-responsive" alt="" />
+
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="col-md-6 ban-bottom">
+			<div class="ban-top">
+				<img src="{% static 'images/111.jpg' %}" class="img-responsive" alt="" />
+
+
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
 </div>
-<br>
+<!--banner-bottom-->
+<!--brands-->
+<div class="brands">
+	<div class="container">
+		<h3>Inside Brighter Shop</h3>
+		<div class="overlay"></div>
+		<div class="embed-responsive embed-responsive-16by9">
+			<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+				<source src="{% static 'video/bright.mp4' %}" type="video/mp4">
+			</video>
+		</div>
+		<div class="container h-100">
+			<div class="d-flex h-100 text-center align-items-center">
+				<div class="w-100 text-white">
+
+					<p class="lead mb-0">Please have a tour</p>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+<!--//brands-->
+<!-- new -->
+<div class="newproducts-w3agile">
+	<div class="container">
+		<h3>New offers</h3>
+		<div class="agile_top_brands_grids">
+			<div class="col-md-3 top_brand_left-1">
+				<div class="hover14 column">
+					<div class="agile_top_brand_left_grid">
+						<div class="agile_top_brand_left_grid_pos">
+							<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive">
+						</div>
+						<div class="agile_top_brand_left_grid1">
+							<figure>
+								<div class="snipcart-item block">
+									<div class="snipcart-thumb">
+										<a href="{% url 'shop:product_list' %}"><img title="" alt=" "
+												src="{% static 'images/14.png' %}"></a>
+										<p>Fried-gram</p>
+										<div class="stars">
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star gray-star" aria-hidden="true"></i>
+										</div>
+
+									</div>
+
+								</div>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 top_brand_left-1">
+				<div class="hover14 column">
+					<div class="agile_top_brand_left_grid">
+						<div class="agile_top_brand_left_grid_pos">
+							<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive">
+						</div>
+						<div class="agile_top_brand_left_grid1">
+							<figure>
+								<div class="snipcart-item block">
+									<div class="snipcart-thumb">
+										<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
+												src="{% static 'images/15.png' %}"></a>
+										<p>Navaratan-dal</p>
+										<div class="stars">
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star gray-star" aria-hidden="true"></i>
+										</div>
+
+									</div>
+
+								</div>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 top_brand_left-1">
+				<div class="hover14 column">
+					<div class="agile_top_brand_left_grid">
+						<div class="agile_top_brand_left_grid_pos">
+							<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive">
+						</div>
+						<div class="agile_top_brand_left_grid_pos">
+							<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive">
+						</div>
+						<div class="agile_top_brand_left_grid1">
+							<figure>
+								<div class="snipcart-item block">
+									<div class="snipcart-thumb">
+										<a href="{% url 'shop:product_list' %}"><img src="{% static 'images/16.png' %}"
+												alt=" " class="img-responsive"></a>
+										<p>White-peasmatar</p>
+										<div class="stars">
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star gray-star" aria-hidden="true"></i>
+										</div>
+
+									</div>
+
+								</div>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 top_brand_left-1">
+				<div class="hover14 column">
+					<div class="agile_top_brand_left_grid">
+						<div class="agile_top_brand_left_grid_pos">
+							<img src="{% static 'images/offer.png' %}" alt=" " class="img-responsive">
+						</div>
+						<div class="agile_top_brand_left_grid1">
+							<figure>
+								<div class="snipcart-item block">
+									<div class="snipcart-thumb">
+										<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
+												src="{% static 'images/17.png' %}"></a>
+										<p>Channa-dal</p>
+										<div class="stars">
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star blue-star" aria-hidden="true"></i>
+											<i class="fa fa-star gray-star" aria-hidden="true"></i>
+										</div>
+
+									</div>
+
+								</div>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- //new -->
+
+
+
 {% endblock %}

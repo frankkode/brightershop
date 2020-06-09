@@ -1,5 +1,6 @@
 
 import os
+import env
 import dj_database_url
 from dotenv import load_dotenv
 load_dotenv()
@@ -10,11 +11,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['lr-onlineshop.herokuapp.com',
-                 '127.0.0.1',
-                 '192.168.8.161']  # dev only to access from phone
+ALLOWED_HOSTS = ['127.0.0.1','192.168.8.161']  # dev only to access from phone
 
 
 # Application definition
@@ -28,13 +27,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.postgres',
+    'sendemail.apps.SendemailConfig',
     'shop',
     'cart',
     'storages',
     'orders',
     'search',
     'payments',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,7 +76,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'eshop.wsgi.application'
 
+#DATABASES = {
+#            'default': {
+#                'ENGINE': 'django.db.backends.sqlite3',
+#                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#            }
+#        }        
 
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+"""
 if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse
                  (os.environ.get('DATABASE_URL'))}
@@ -84,7 +96,7 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
+"""
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -120,7 +132,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # Amazon Set-up
-AWS_S3_OBJECT_PARAMETERS = {
+"""AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
     'CacheControl': 'max-age=94608000'
 }
@@ -128,7 +140,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 AWS_LOCATION = 'static'
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = 'eshop-static-s3'
+AWS_STORAGE_BUCKET_NAME = 'brightershop'
 AWS_DEFAULT_ACL = None
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
@@ -143,6 +155,30 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+"""
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT', 
+    'CacheControl': 'max-age=94608000', 
+    }
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = 'eu-north-1'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_FILE_EVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+MEDIAFILES_LOCATION ='media'
+DEFAULT_FILE_STORAGE ='custom_storages.MediaStorage'
+
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 # Paypal
 CLIENT_ID = os.getenv("CLIENT_ID")
@@ -150,3 +186,10 @@ CLIENT_ID = os.getenv("CLIENT_ID")
 # Stripe
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
 STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_PUBLISHABLE_KEY")
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')

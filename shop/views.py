@@ -15,9 +15,14 @@ def home(request, category_slug=None):
                             'title': title})
 
 
-def contact(request):
-    title = "LR Ireland | Contact"
-    return render(request, 'shop/contact.html', {'title': title})
+
+def salon(request):
+    title = "LR Ireland | Salon"
+    return render(request, 'shop/salon.html', {'title': title})
+
+def service(request):
+    title = "LR Ireland | Service"
+    return render(request, 'shop/services.html', {'title': title})
 
 
 def faq(request):

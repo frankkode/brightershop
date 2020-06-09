@@ -21,7 +21,7 @@ def payment(request):
     if request.method == 'POST':
         charge = stripe.Charge.create(
             amount=int(total_price * 100),
-            currency='EUR',
+            currency='SEK',
             source=request.POST['stripeToken']
         )
         print(request.POST)

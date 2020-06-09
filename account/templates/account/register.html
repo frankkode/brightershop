@@ -1,20 +1,28 @@
 {% extends "shop/base.html" %}
 {% block content %}
-<!-- Django registration form for new users -->
-<div class="col-10 col-md-6 text-left mx-auto bg-light p-2 m-3">
-    <h1>Create an account</h1>
-    <p>Please, create new account using the following form:</p>
-    <form action="." method="post">
-        {% for field in user_form %}
-        <div class="fieldWrapper">
-            {{ field.errors }}
-            {{ field.label_tag }} <br>
-            {{ field }}
+<!-- register -->
+<div class="register">
+    <div class="container">
+        <h2>Register Here</h2>
+        <div class="login-form-grids">
+            <h5>Use Correct information</h5>
+            <form action="." method="post">
+                {% for field in user_form %}
+                <div class="fieldWrapper">
+                    {{ field.errors }}
+                    {{ field.label_tag }} <br>
+                    {{ field }}
+                </div>
+                <br>
+                {% endfor %}
+                {% csrf_token %}
+                <input class="text-white lead green-bg p-2 mb-3 rounded" type="submit" value="Create Account">
+            </form>
         </div>
-        <br>
-        {% endfor %}
-        {% csrf_token %}
-        <input class="text-white lead green-bg p-2 mb-3 rounded" type="submit" value="Create Account">
-    </form>
+        <div class="register-home">
+            <a href="{% url 'shop:home' %}">Home</a>
+        </div>
+    </div>
 </div>
+<!-- //register -->
 {% endblock %}

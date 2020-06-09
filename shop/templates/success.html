@@ -1,0 +1,23 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+      <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+      <li class="active">Success</li>
+    </ol>
+  </div>
+</div>
+
+<div class="card border-success mb-3" style="max-width: 38rem;">
+
+  <div class="card-body text-success">
+    <h3 class="card-title">Thank You!</h3>
+    <p class="card-text">We have received your email, we will answer as quick as possible!</p>
+    <h4 class="card-title">Brighter Shop menager</h4>
+  </div>
+</div>
+
+{% endblock %}

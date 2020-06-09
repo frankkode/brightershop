@@ -1,0 +1,71 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="breadcrumbs">
+	<div class="container">
+		<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+			<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+			<li class="active">Salon</li>
+		</ol>
+	</div>
+</div>
+<main class="main-content">
+	<div class="">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="price-list mb-5 mt-4">
+						<h2 class="section-title">Men's prices</h2>
+						<ul class="prices">
+							<li>Children Haircut<span class="price">150 Kr</span></li>
+							<li>Adulte Haircut<span class="price">200 Kr</span></li>
+							<li>Adulte Haircut + Beads<span class="price">250 Kr</span></li>
+							<li>Adulte Haircut + Face clearning<span class="price">250 Kr</span></li>
+							<li>Special Hearcut<span class="price">300 Kr</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="price-list mb-5 mt-4">
+						<h2 class="section-title">women's prices</h2>
+						<ul class="prices">
+							<li>French Braid<span class="price">~ 1500 Kr </span></li>
+							<li>Box Braids<span class="price">~ 2000 Kr </span></li>
+							<li>Braided Ponytail<span class="price">~ 1500 Kr </span></li>
+							<li>Dutch Braid<span class="price">~ 2500 Kr </span></li>
+							<li>Crochet Braids<span class="price">~ 3000 Kr </span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<h1 class="text-center">Our Staff</h1>
+
+
+			<div class="row display-center">
+
+				<div class="col-md-3 center mb-5">
+					<div class="feature">
+						<img src="{% static 'img/staf.jpg' %}" class="feature-image" style="height: 270px;">
+						<h3 class="feature-title">Jenny K</h3>
+						<p>I am Jenny K a proffetional hair braider with meny and beautiful style for you.</p>
+					</div>
+				</div>
+				<div class="col-md-3 mb-5">
+					<div class="feature">
+						<img src="{% static 'img/staff2.jpg' %}" class="feature-image" style="height: 270px;">
+						<h3 class="feature-title">Bright T</h3>
+						<p>I am Bright T a proffetional haircut with more than 20 years in service</p>
+					</div>
+				</div>
+			</div> <!-- .row -->
+
+
+		</div>
+	</div>
+</main>
+
+
+{% endblock %}

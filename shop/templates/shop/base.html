@@ -7,61 +7,280 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Super Market" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/731c7b42c4.js" crossorigin="anonymous"></script>
+
+
+
+    <!--<script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>-->
+    <!-- //for-mobile-apps -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome icons -->
+    <!-- //js -->
+    <link
+        href='//fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+    <link
+        href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+        rel='stylesheet' type='text/css'>
+    <!-- start-smoth-scrolling -->
+
+    <!-- start-smoth-scrolling -->
     {% block title %}
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>LR | Ireland</title>
-    {% endif %}
+    <title>Brither-Shop</title>
     {% endblock %}
 </head>
 
 <body>
-    <div class="container-fluid px-0 bg-white">
-        <div class="container-fluid green-bg m-0 p-0">
-            <a class="nav-link p-0" href="{% url 'shop:home' %}">
-                <h2 class="text-center text-white pt-2 pb-0 mb-0"><strong>LR | Ireland</strong></h2>
-                <p class="text-center text-white pb-2">Independent Partner | K.Simonova</p>
-            </a>
+    <!-- header -->
+    <div class="agileits_header">
+        <div class="container">
+            <div class="w3l_offers">
+                <p>Barbershop is Open,Bring 2 People Get 10% off .</p>
+            </div>
+            <div class="agile-login">
+                <ul>
+                    {% if user.is_authenticated%}
+                    <li><a href="{% url 'logout' %}"> Logout </a></li>
+                    <li><a href="{% url 'dashboard' %}">Dashboad</a></li>
+                    <p class='text-success ml-3'>{{ user }}, logged in</p>
+                    {% else %}
+                    <a href="{% url 'login' %}"><i class="fa fa-user mr-2"> Login</i></a>
+                    <a href="{% url 'register' %}"><i class="fa fa-user-plus"> Register</i></a>
+                    {% endif %}
+
+
+                </ul>
+            </div>
+            {% with total_items=cart|length %}
+            <div class="product_list_header">
+                <a class=" nav-item font-weight-bold lead text-dark" href="{% url 'cart:cart_detail' %}"
+                    style="color:rgb(0, 0, 0)">
+                    <span><i class="fa fa-cart-arrow-down"> {{ total_items }}</i></span>
+                </a>
+
+            </div>
+            {% endwith %}
+            <div class="clearfix"> </div>
         </div>
-        <div class="col-11 col-md-4 mx-auto">
-            <form method='GET' action='{% url "search" %}' class="form my-2 my-lg-0">
-                <div class='input-group'>
-                    <input class="form-control" type="text" placeholder="Search in shop..." name='q' aria-label="Search"
-                        value='{{ request.GET.q }}'>
-                    <span class='input-group-btn'>
-    <button class="btn btn-success ml-2 px-3" type="submit" style="background-color:#74AB8C"><i class="fas fa-search"></i></button>
-                    </span>
-                </div>
-            </form>
-        </div>
-        <hr>
-        {% include 'shop/menu.html' %}
-        {% block content %}
-        {% endblock %}
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
     </div>
-    <br>
-    {% include 'shop/footer.html' %}
-    {% block footer %}
-    {% endblock footer %}
+
+    <div class="logo_products">
+        <div class="container">
+            <div class="w3ls_logo_products_left1">
+                <ul class="phone_email">
+                    <li><i class="fa fa-phone" aria-hidden="true"></i>To Order products call us : (+4623) 234 567</li>
+
+                </ul>
+            </div>
+            <div class="w3ls_logo_products_left">
+                <h1><a href="{% url 'shop:home' %}">Brighter Shop</a></h1>
+            </div>
+            <div class="col-11 col-md-4 mx-auto">
+                <form method='GET' action='{% url "search" %}' class="form my-2 my-lg-0">
+                    <div class='input-group'>
+                        <input class="form-control" type="text" placeholder="Search in shop..." name='q'
+                            aria-label="Search" value='{{ request.GET.q }}'>
+                        <span class='input-group-btn'>
+                            <button class="btn btn-success ml-2 px-3 search" type="submit"
+                                style="background-color:darkorange"><i class="fas fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!-- //header -->
+
+    {% include 'shop/menu.html' %}
+    {% block content %}
+    {% endblock content %}
+
+
+    <!-- //footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="w3_footer_grids">
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Contact</h3>
+
+                    <ul class="address">
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block,
+                            <span>New York City.</span></li>
+                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a
+                                href="mailto:info@example.com">info@example.com</a></li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Information</h3>
+                    <ul class="info">
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">About Us</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="contact.html">Contact Us</a>
+                        </li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="short-codes.html">Short
+                                Codes</a>
+                        </li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="faq.html">FAQ's</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Special
+                                Products</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Category</h3>
+                    <ul class="info">
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="groceries.html">Groceries</a>
+                        </li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="household.html">Household</a>
+                        </li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="personalcare.html">Personal
+                                Care</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="packagedfoods.html">Packaged
+                                Foods</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="beverages.html">Beverages</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Profile</h3>
+                    <ul class="info">
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Store</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">My Cart</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.html">Login</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="registered.html">Create
+                                Account</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+
+            <div class="container">
+                <p>© 2020 Bright Shop. All rights reserved | Design by <a href="www.masacode.com">MASAcode</a>, <a
+                        href="http://w3layouts.com/">W3layouts</a></p>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-botm">
+        <div class="container">
+            <div class="w3layouts-foot">
+                <ul>
+                    <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <div class="payment-w3ls">
+                <img src="{% static 'images/card.png' %}" alt=" " class="img-responsive">
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!-- //footer -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+    <script src="{% static 'js/map-custom.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/731c7b42c4.js" crossorigin="anonymous"></script>
+    <!-- for-mobile-apps -->
+
+
+
+    <!-- top-header and slider -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+                };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+
+    <!-- main slider-banner -->
+    <script src="{% static 'js/skdslider.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <link href="{% static 'css/skdslider.css' %}" rel="stylesheet">
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#demo1').skdslider({
+                'delay': 5000,
+                'animationSpeed': 2000,
+                'showNextPrev': true,
+                'showPlayButton': true,
+                'autoSlide': true,
+                'animationType': 'fading'
+            });
+
+            jQuery('#responsive').change(function () {
+                $('#responsive_wrapper').width(jQuery(this).val());
+            });
+
+        });
+    </script>
+    <!-- //main slider-banner -->
 </body>
 
 </html>

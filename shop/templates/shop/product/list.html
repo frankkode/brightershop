@@ -2,16 +2,18 @@
 {% load static %}
 {% block content %}
 <br>
-<div class="container px-0">
+<div class="container center ">
+
   <hr>
-  <h3 class="text-center green"> Our Top Quality German Products</h3>
+  <h3 class="text-center green"> Welcome to Brither Market</h3>
   <hr>
   <br>
   <p>
-    <p class="lead">Filter by Category:</p>
-    <a class="btn btn-info" href="{% url 'shop:product_list' %}">All Products</a>
+    <p class="lead ml-2">Filter by Category:</p>
+    <a class="btn ml-2 btn-info" href="{% url 'shop:product_list' %}">All Products</a>
     {% for c in categories %}
     <a class="btn btn-light mx-2" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+
     {% endfor %}
 
 </div>

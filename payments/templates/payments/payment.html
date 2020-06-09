@@ -2,43 +2,48 @@
 {% load static %}
 
 {% block content %}
+
 <hr>
 <br>
-<h4>{% if user.is_authenticated %}
-    {{ user }}
-    {% else %}
-    Guest
-    {% endif %}, how would you wish to pay for your order today?
-</h4>
-<br>
-<hr>
-<h4 class="">Total: {{ cart.get_total_price }},- Euro</h4>
-<br>
-<p class="lead">Please, select payment method: </p>
-<div class="row">
+<div class="container">
+    <h4>{% if user.is_authenticated %}
+        {{ user }}
+        {% else %}
+        Guest
+        {% endif %}, how would you wish to pay for your order today?
+    </h4>
+    <br>
+    <hr>
+    <h4 class="">Total: {{ cart.get_total_price }},- SEK</h4>
+    <br>
+    <p class="lead">Sorry currentry we are not accepting card payment, please call us to complate your order </p>
 
-    <div class="col-10 m-2 p-2">
-        <form action="" method="POST">
-            {% csrf_token %}
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ pubKey }}"
-                data-description="LR | Ireland order" data-locale="auto" data-amount="{{get_total_price }}">
-            </script>
-            <p class="mt-1"><img src="{% static 'img/stripe_icon.png' %}" alt="Powered by Stripe info"></p>
-        </form>
-        <p>or</p>
+    <div class="row">
+
+        <div class="col-10 m-2 p-2">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <!--   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ pubKey }}"
+                    data-description="LR | Ireland order" data-locale="auto" data-amount="{{get_total_price }}">
+                </script>-->
+                <p class="mt-1"><img src="{% static 'img/stripe_icon.png' %}" alt="Powered by Stripe info"></p>
+            </form>
+
+            <h2>Call us on: +46704052680</h2>
+        </div>
+
+        <div class="col-3 text-center">
+            <div id="paypal-button-container"></div>
+        </div>
+
+        <script src="https://www.paypal.com/sdk/js?client-id={{ CLIENT_ID }}">
+        </script>
+
+        <script>
+            paypal.Buttons().render('#paypal-button-container');
+        </script>
+
     </div>
-
-    <div class="col-3 text-center">
-        <div id="paypal-button-container"></div>
-    </div>
-
-    <script src="https://www.paypal.com/sdk/js?client-id={{ CLIENT_ID }}">
-    </script>
-
-    <script>
-        paypal.Buttons().render('#paypal-button-container');
-    </script>
-
 </div>
 <hr>
 {% endblock %}

@@ -3,12 +3,14 @@
 
 {% block content %}
 <br>
-<div class="container px-0">
-    <img class="img-fluid" src="{% static 'img/banner1.jpg' %}" alt="image">
+<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+            <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">Special Offer</li>
+        </ol>
+    </div>
 </div>
-<br>
-<hr>
-<h2 class="green text-center">Special Offers</h2>
 <hr>
 {% include 'shop/product/product-template.html' %}
 <br>

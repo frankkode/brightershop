@@ -2,12 +2,20 @@
 {% load static %}
 
 {% block content %}
+<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+            <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">About</li>
+        </ol>
+    </div>
+</div>
 <br>
-<div class="container px-0" >
+<div class="container px-0">
     <img class="img-fluid" src="{% static 'img/lr-headquarters.jpg' %}" alt="Company headquarter image">
 </div>
 <br>
-<div class="container">
+<div class="container mb-5">
     <h4 class="text-center">
         A COMPANY ON THE WAY TO SUCCESS
     </h4>
@@ -28,7 +36,8 @@
         quality at an affordable price of these LR products available here. We hope you enjoy shopping and enjoy using
         LR products.
 
-        You are on the LR partner site of Katarina Simon. This is not an official website of LR Health & Beauty Systems GmbH.
+        You are on the LR partner site of Katarina Simon. This is not an official website of LR Health & Beauty Systems
+        GmbH.
         Please order LR consultants with their partner number via the LR main page.</p>
 </div>
 {% endblock %}

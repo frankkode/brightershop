@@ -1,39 +1,58 @@
 {% extends "shop/base.html" %}
 {% block content %}
-<div class="container my-3" id="loginFormContainer">
-    <div class="col-12 col-md-6 mx-auto bg-light text-center">
-        <br>
-        <h1>Log-in</h1>
-        <hr>
-        {% if form.errors %}
-        <h5 class="text-danger">
-            Your username and password didn't match.
-            Please try again.
-        </h5>
-        {% else %}
-        <p>Please, use the following form to log-in.<br>If you don't have an account <a
-                href="{% url 'register' %}">register here</a></p>
-        {% endif %}
-        <div class="login-form pt-3 text-center">
-            <form action="{% url 'login' %}" method="post">
-                {% csrf_token %}
-                {% for field in form %}
-                <div class="row">
-                    <div class="col-12">
-                        {{ field.errors }}
-                        {{ field.label_tag }}
-                    </div>
-                    <div class="col-12">
-                        {{ field }}
-                    </div>
-                </div>
-                {% endfor %}
-                {% if request.GET.next %}
-                <input type="hidden" name="next" value="{{ request.GET.next }}">
-                {% endif %}
-                <button class="btn btn-secondary rounded m-3" type="submit" value="Log-in">Log in</button>
-            </form>
-        </div>
+
+
+
+<!-- breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+            <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">Login Page</li>
+        </ol>
     </div>
 </div>
-{% endblock %}
+<!-- //breadcrumbs -->
+<!-- login -->
+<div class="login">
+    <div class="container">
+        <h2>Login Here</h2>
+
+        <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
+            {% if form.errors %}
+            <h5 class="text-danger">
+                Your username and password didn't match.
+                Please try again.
+            </h5>
+            {% else %}
+            <p>Please, use the following form to log-in.<br>If you don't have an account <a
+                    href="{% url 'register' %}">register here</a></p>
+            {% endif %}
+            <div class="login-form pt-3 text-center">
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="row">
+                        <div class="col-12">
+                            {{ field.errors }}
+                            {{ field.label_tag }}
+                        </div>
+                        <div class="col-12">
+                            {{ field }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% if request.GET.next %}
+                    <input type="hidden" name="next" value="{{ request.GET.next }}">
+                    {% endif %}
+                    <button class="btn btn-secondary rounded m-3" type="submit" value="Log-in">Log in</button>
+                </form>
+            </div>
+            <h4>For New People</h4>
+            <p><a href="{% url 'register' %}">Register Here</a> (Or) go back to <a
+                    href="{% url 'shop:home' %}">Home<span class="glyphicon glyphicon-menu-right"
+                        aria-hidden="true"></span></a></p>
+        </div>
+    </div>
+    <!-- //login -->
+    {% endblock %}

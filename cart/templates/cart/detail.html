@@ -27,13 +27,14 @@
         <button class="border-secondary rounded-pill mr-0">
           <a class=" text-danger" href="{% url 'cart:cart_remove' product.id %}">Remove</a>
         </button>
-        <p class="mt-2">Item Total : {{ item.total_price }} €</p>
+        <p class="mt-2">Item Total : {{ item.total_price }} SEK</p>
       </form>
       <hr>
       {% endwith %}
       {% endfor %}
       <a class="nav-link text-body m-3" href="{% url 'shop:product_list' %}">
-        <button type="button" class="btn rounded-pill text-white px-3" style="background-color: #74AB8C;">Continue
+        <button type="button" class="btn rounded-pill text-white px-3"
+          style="background-color: rgb(237, 142, 42);">Continue
           Shopping</button>
       </a>
     </div>
@@ -48,7 +49,7 @@
           aria-describedby="inputGroup-sizing-sm">
       </div>
 
-      <h4 class="m-3"><strong> Subtotal : {{ cart.get_total_price }} €</strong></h4>
+      <h4 class="m-3"><strong> Subtotal : {{ cart.get_total_price }} SEK</strong></h4>
       <small>Shipping Included!</small>
       <hr>
       <img src="{% static 'img/paymment_icons.png' %}" width="150px" alt="image">
@@ -60,6 +61,7 @@
       </a>
       {% else %}
       <p>Your cart is empty!</p>
+      <h3><a href="{% url 'shop:product_list' %}">Continue Shopping Here</a></h3>
       {% endif %}
     </div>
     <br>

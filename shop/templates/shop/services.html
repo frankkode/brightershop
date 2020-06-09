@@ -1,0 +1,175 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="breadcrumbs">
+	<div class="container">
+		<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+			<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+			<li class="active">Services</li>
+		</ol>
+	</div>
+</div>
+
+<main class="main-content">
+	<div class="page">
+		<div class="container">
+			<div class="text-center">
+				<div class="filter-links filterable-nav">
+					<select class="mobile-filter">
+						<option value="*">Show all</option>
+						<option value=".nail">Pedicule</option>
+						<option value=".men">Haircut</option>
+						<option value=".face">Face Care</option>
+						<option value=".women">Braids</option>
+						<option value=".makeup">Makeup</option>
+					</select>
+					<a href="#" class="current wow fadeInRight" data-filter="*">Show all</a>
+					<a href="#" class="wow fadeInRight" data-wow-delay=".2s" data-filter=".nail">Pedicule</a>
+					<a href="#" class="wow fadeInRight" data-wow-delay=".4s" data-filter=".men">Haircut</a>
+					<a href="#" class="wow fadeInRight" data-wow-delay=".6s" data-filter=".face">Face Care</a>
+					<a href="#" class="wow fadeInRight" data-wow-delay=".8s" data-filter=".women">Braids</a>
+					<a href="#" class="wow fadeInRight" data-wow-delay="1s" data-filter=".makeup">Makeup</a>
+				</div>
+			</div>
+
+			<div class="filterable-items">
+				<div class="gallery-item filterable-item men">
+					<a href="dummy/large-gallery/gallery-1.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/af2.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro haircut</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item women">
+					<a href="dummy/large-gallery/gallery-2.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/h5.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro Braid</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item nail">
+					<a href="dummy/large-gallery/gallery-3.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/nail.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro Pedicule</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item women">
+					<a href="dummy/large-gallery/gallery-4.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/h4.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro Braids</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item women">
+					<a href="dummy/large-gallery/gallery-5.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/h3.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro Braid</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item face">
+					<a href="dummy/large-gallery/gallery-6.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/make.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro Face</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item men">
+					<a href="dummy/large-gallery/gallery-7.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/af1.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro haircut</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item face">
+					<a href="dummy/large-gallery/gallery-8.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/face.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro Face</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item women">
+					<a href="dummy/large-gallery/gallery-9.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/h2.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro Braids</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item men">
+					<a href="dummy/large-gallery/gallery-10.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/af3.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro haircut</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item makeup">
+					<a href="dummy/large-gallery/gallery-11.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/lips.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro Makeup</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class="gallery-item filterable-item makeup">
+					<a href="dummy/large-gallery/gallery-12.jpg">
+						<figure class="featured-image">
+							<img src="{% static 'img/h1.jpg' %}" alt="img-salon" style="height: 270px;">
+							<figcaption>
+								<h2 class="gallery-title">Afro Makeup</h2>
+								<p><a href="{% url 'contact' %}">Get Quotation</a></p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<div class="text-center"><iframe src="https://assets.pinterest.com/ext/embed.html?id=853784041842218004" height="529"
+		width="345" frameborder="0" scrolling="no"></iframe></div>
+{% endblock %}
