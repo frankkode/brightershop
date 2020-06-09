@@ -1,11 +1,9 @@
 [![Build Status](https://travis-ci.com/mariourban83/milestone4-eshop.svg?branch=master)](https://travis-ci.com/mariourban83/milestone4-eshop)
 
-## Ecommerce Django-Python project.
-[![LR Onlineshop Demo](https://eshop-static-s3.s3-eu-west-1.amazonaws.com/static/img/git_banner_1.jpg "LR-Onlineshop Demo")](https://lr-onlineshop.herokuapp.com)
-
----
+## Ecommerce Django-Python project
 
 ## Table of Contents
+
 * [Project summary](#project-summary)
 * [Design](#design)
 * [User Experience](#ux)   
@@ -25,9 +23,8 @@
 
 Full Stack Framework website project with Python 3.7 and Django 3.
 
-1. The goal of this project is to create a simple yet fully functional e-commerce website selling German health supplements, first class Aloe Vera products and cosmetics.
+1. The goal of this project is to create a simple yet fully functional e-commerce website shop.
 2. Build simple, reusable django ecommerce app that can be used as an template and reference again in the future projects.
-3. Fulfill Customer ( [Code Institute - Europe's leading online bootcamp](https://codeinstitute.net/full-stack-software-development-diploma/ )) requirements of final milestone project.
 
 ---
 
@@ -37,9 +34,6 @@ The website was designed with mobile first approach with user in mind. The wiref
 The project uses Poppins and Roboto fonts from Google Fonts Library
 Main color #74ab8c  is used for topbar and footer.The color was chosen to match with product collection color.
 
-[![User flow](https://eshop-static-s3.s3-eu-west-1.amazonaws.com/static/img/User+Flow.png "User Flow")](https://lr-onlineshop.herokuapp.com)
-
----  
 
 ## [User Experience](#ux)   
 
@@ -205,7 +199,7 @@ For my version control I used Github and Heroku for hosting the live project.
   ```python3 -m venv venv ```   
   ```source venv/bin/activate``` for linux maschine.
 3. Enter folowing commands :   
-```git clone https://github.com/mariourban83/milestone4-eshop.git ```  (will download and unpack the project)   
+``` https://github.com/frankkode/brightershop```  (will download and unpack the project)   
 ```pip3 install -r requirements.txt```
 4. In the main project folder of the project directory, where settings.py lives, create  **.env** file and enter the following:
 
@@ -263,10 +257,8 @@ Django related books
 
 #### Thanks
 
-To Code Institute for providing this oportunity to learn web development in a well structured and supportive way.
-To my mentor, Seun Owonikoko for her kind support.
-To my amazing wife, for supporting and encouraging me on my developer journey
+Brighter shop manager
 
-### For Educational Use Only
+
 
 [Back to top](#summary)
