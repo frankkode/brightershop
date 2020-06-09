@@ -13,7 +13,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1", "192.168.8.161")  #['127.0.0.1','192.168.8.161']  # dev only to access from phone
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1")  #['127.0.0.1','192.168.8.161']  # dev only to access from phone
 
 
 # Application definition
@@ -84,6 +84,7 @@ WSGI_APPLICATION = 'eshop.wsgi.application'
 #        }        
 
 #DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse
