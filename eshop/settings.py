@@ -13,7 +13,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1")  #['127.0.0.1','192.168.8.161']  # dev only to access from phone
+ALLOWED_HOSTS = "brighter.herokuapp.com", "127.0.0.1"
 
 
 # Application definition
