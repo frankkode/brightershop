@@ -147,6 +147,15 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_FILE_EVERWRITE = False
 AWS_DEFAULT_ACL = None
 
+
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env'),]
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
+MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
+
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
@@ -157,6 +166,8 @@ DEFAULT_FILE_STORAGE ='custom_storages.MediaStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+
+
 
 # Paypal
 CLIENT_ID = os.getenv("CLIENT_ID")
