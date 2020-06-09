@@ -11,9 +11,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','192.168.8.161']  # dev only to access from phone
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1", "192.168.8.161")  #['127.0.0.1','192.168.8.161']  # dev only to access from phone
 
 
 # Application definition
@@ -83,8 +83,8 @@ WSGI_APPLICATION = 'eshop.wsgi.application'
 #            }
 #        }        
 
-DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
-"""
+#DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
 if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse
                  (os.environ.get('DATABASE_URL'))}
@@ -96,7 +96,7 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-"""
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -132,30 +132,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # Amazon Set-up
-"""AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000'
-}
 
-AWS_LOCATION = 'static'
-AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = 'brightershop'
-AWS_DEFAULT_ACL = None
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-STATIC_URL = 'https://%s/%s/'
-
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-"""
 
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT', 
