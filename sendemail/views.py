@@ -17,7 +17,8 @@ def contactView(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
-    return render(request, "shop/contact.html", {'form': form})
+    return render(request, "contact.html", {'form': form})
 
 def SuccessView(request):
     return render(request, 'success.html')
+

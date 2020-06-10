@@ -3320,7 +3320,7 @@ output {
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;
-  background-color: #fff;
+  background-color: rgb(249, 199, 91);
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;

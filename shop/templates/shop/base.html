@@ -84,23 +84,23 @@
         <div class="container">
             <div class="w3ls_logo_products_left1">
                 <ul class="phone_email">
-                    <li><i class="fa fa-phone" aria-hidden="true"></i>To Order products call us : (+4623) 234 567</li>
+                    <li><a href="tel:+4689765432"><i class="fa fa-phone" aria-hidden="true"></i>To Order products
+                            call
+                            us : (+4623) 234 567</a></li>
 
                 </ul>
             </div>
             <div class="w3ls_logo_products_left">
                 <h1><a href="{% url 'shop:home' %}">Brighter Shop</a></h1>
             </div>
-            <div class="col-11 col-md-4 mx-auto">
-                <form method='GET' action='{% url "search" %}' class="form my-2 my-lg-0">
-                    <div class='input-group'>
-                        <input class="form-control" type="text" placeholder="Search in shop..." name='q'
-                            aria-label="Search" value='{{ request.GET.q }}'>
-                        <span class='input-group-btn'>
-                            <button class="btn btn-success ml-2 px-3 search" type="submit"
-                                style="background-color:darkorange"><i class="fas fa-search"></i></button>
-                        </span>
-                    </div>
+            <div class="w3l_search">
+                <form method='GET' action='{% url "search" %}'>
+                    <input type="search" name='q' placeholder="Search for a Product..." aria-label="Search"
+                        value='{{ request.GET.q }}' required="">
+                    <button type="submit" class="btn btn-default search" aria-label="Left Align">
+                        <i class="fa fa-search" aria-hidden="true"> </i>
+                    </button>
+                    <div class="clearfix"></div>
                 </form>
             </div>
 
@@ -122,12 +122,14 @@
                     <h3>Contact</h3>
 
                     <ul class="address">
-                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Boden, Drottninggatan 29,
-                            961 35 Boden,
-                            <span>SWEDEN.</span></li>
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a
+                                href="addressto:drotnigatan 29">Drottnigatan 29,
+                                96135 Boden,</a>
+                        </li>
                         <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a
                                 href="mailto:brightershop@example.com">info@example.com</a></li>
-                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a
+                                href="tel:+4687654323">+1234 567 567</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 w3_footer_grid">
@@ -189,8 +191,8 @@
         <div class="footer-copy">
 
             <div class="container">
-                <p>© 2020 Bright Shop. All rights reserved | Design by <a href="www.masacode.com">MASAcode</a>, <a
-                        href="http://w3layouts.com/">W3layouts</a></p>
+                <p>© 2020 Bright Shop. All rights reserved | Design by <a href="http://masacode.com/"
+                        target="blanc">MASAcode</a>, <a href="http://w3layouts.com/" target="blanc">W3layouts</a></p>
             </div>
         </div>
 
