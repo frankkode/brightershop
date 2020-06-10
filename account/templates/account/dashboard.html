@@ -2,9 +2,15 @@
 {% load static %}
 {% block content %}
 <!-- User dashboard content -->
-<div class="container px-0">
-    <img class="img-fluid mx-auto" src="{% static 'img/banner2.jpg' %}" alt="banner image">
+<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+            <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">Dashbord</li>
+        </ol>
+    </div>
 </div>
+
 <div class="container text-center">
     <br>
     <h3>Hi {{ user.username}}, you are logged in</h3><br>

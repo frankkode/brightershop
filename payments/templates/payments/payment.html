@@ -16,18 +16,18 @@
     <hr>
     <h4 class="">Total: {{ cart.get_total_price }},- SEK</h4>
     <br>
-    <p class="lead">Sorry currentry we are not accepting card payment, please call us to complate your order </p>
+    <p class="lead">Sorry currentry we are not accepting card payment, please call us to complete your order </p>
 
     <div class="row">
 
         <div class="col-10 m-2 p-2">
-            <form action="" method="POST">
+            <!--<form action="" method="POST">
                 {% csrf_token %}
-                <!--   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ pubKey }}"
-                    data-description="LR | Ireland order" data-locale="auto" data-amount="{{get_total_price }}">
-                </script>-->
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ pubKey }}"
+                    data-description="your order" data-locale="auto" data-amount="{{get_total_price }}">
+                </script>
                 <p class="mt-1"><img src="{% static 'img/stripe_icon.png' %}" alt="Powered by Stripe info"></p>
-            </form>
+            </form>-->
 
             <h2>Call us on: +46704052680</h2>
         </div>
