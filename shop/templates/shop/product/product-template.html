@@ -8,23 +8,22 @@
         <div class="card mb-5  agile_top_brand_left_grid_pos">
             {% if product.image %}
             <a href="{{ product.get_absolute_url }}"><img class="card-img-top" src="{{ product.image.url }}"
-                    alt="image of {{ product.name }} product" style="height: 250px; "></a>
+                    alt="image of {{ product.name }} product" style="height: 260px; "></a>
             {% else %}
             <img class="card-img-top pt-3" src="{% static 'img/no_image.png' %}" alt="no product image">
             {% endif %}
-            <div class="card-body">
-                <h3 class="card-title text-uppercase">{{ product.name }}</h3>
-                <p class="card-text text-capitalize">{{ product.content }}</p>
-                <a href="#" class=" btn-light mb-2">
+            <hr>
+            <div class="">
+                <h3 class="card-title text-uppercase orange-color">{{ product.name }}</h3>
+                <a href="#" class="">
                     <h3>{{ product.price }} SEK</h3>
                 </a>
 
-                <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                <!--<form action="{% url 'cart:cart_add' product.id %}" method="post">
                     {{ cart_product_form }}
                     {% csrf_token %}
                     <input type="submit" class=" btn-danger mb-1" value="add to cart">
-                </form>
-                <br>
+                </form>-->
 
             </div>
 

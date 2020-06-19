@@ -20,6 +20,10 @@ def salon(request):
     title = "LR Ireland | Salon"
     return render(request, 'shop/salon.html', {'title': title})
 
+def cleaning(request):
+    title="LR Ireland | Cleaning"
+    return render(request, 'shop/cleaning.html', {'title':title})
+
 def service(request):
     title = "LR Ireland | Service"
     return render(request, 'shop/services.html', {'title': title})

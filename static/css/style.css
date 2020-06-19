@@ -4201,7 +4201,7 @@ h3.agileits-icons-title {
 /*card*/
 .card {
     max-width: 270px;
-    height: 500px;
+    height: 450px;
     background: #ffffff;
     margin: 50px auto;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
@@ -6870,4 +6870,8 @@ header .overlay {
     background: -webkit-linear-gradient(left, #ff6a5b 0%, #ff4d7e 100%);
     background: -o-linear-gradient(left, #ff6a5b 0%, #ff4d7e 100%);
     background: linear-gradient(to right, #ff6a5b 0%, #ff4d7e 100%);
+}
+
+.color-white {
+    color: #DDD;
 }
