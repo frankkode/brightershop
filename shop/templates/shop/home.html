@@ -12,30 +12,42 @@
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<!-- Slide One - Set the background image for this slide in the line below -->
+
 			<div class="carousel-item active"
 				style="background-image: url('https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_16:9/stock%2Fshutterstock_373602469')">
-				<div class="carousel-caption d-none d-md-block">
-					<h1 class="display-4">Welcome to Brighter Shop</h1>
-					<p class="lead">Our Prices Are Very Competitive.</p>
-				</div>
+				<a href="{% url 'shop:product_list' %}">
+					<div class="carousel-caption d-none d-md-block">
+						<h1 class="display-4">Welcome to Brighter Shop</h1>
+						<p class="lead">Our Prices Are Very Competitive.</p>
+					</div>
+				</a>
 			</div>
+
 			<!-- Slide Two - Set the background image for this slide in the line below -->
+
 			<div class="carousel-item"
 				style="background-image: url('https://www.templateshub.net/demo/Chillclean-Cleaning-Services-Template/assets/images/blog/img3.jpg')">
-				<div class="carousel-caption d-none d-md-block">
-					<h1 class="display-4">CLEANING SERVICES</h1>
-					<p class="lead">We Have Experience in cleaning</p>
-				</div>
+				<a href="{% url 'shop:cleaning' %}">
+					<div class="carousel-caption d-none d-md-block">
+						<h1 class="display-4">CLEANING SERVICES</h1>
+						<p class="lead">We Have Experience in cleaning</p>
+					</div>
+				</a>
 			</div>
+
 			<!-- Slide Three - Set the background image for this slide in the line below -->
+
 			<div class="carousel-item"
 				style="background-image: url('https://source.unsplash.com/-ucnC7PMDqE/1920x1080')">
 
-				<div class="carousel-caption d-none d-md-block">
-					<h3 class="display-4">Barber Shop Is Open</h3>
-					<p class="lead">We do all braid style</p>
-				</div>
+				<a href="{% url 'shop:salon' %}">
+					<div class="carousel-caption d-none d-md-block">
+						<h3 class="display-4">Barber Shop Is Open</h3>
+						<p class="lead">We do all braid style</p>
+					</div>
+				</a>
 			</div>
+
 		</div>
 		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -63,10 +75,10 @@
 			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 				<ul id="myTab" class="nav nav-tabs" role="tablist">
 					<li role="presentation" class="active"><a href="#expeditions" id="expeditions-tab" role="tab"
-							data-toggle="tab" aria-controls="expeditions" aria-expanded="true">On Sherves</a>
+							data-toggle="tab" aria-controls="expeditions" aria-expanded="true">Some Products</a>
 					</li>
 					<li role="presentation"><a href="#tours" role="tab" id="tours-tab" data-toggle="tab"
-							aria-controls="tours">Meet & Fish</a></li>
+							aria-controls="tours">More Products</a></li>
 				</ul>
 				<div id="myTabContent" class="tab-content">
 					<div role="tabpanel" class="tab-pane fade in active" id="expeditions"
@@ -88,7 +100,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
-																src="{% static 'images/1.png' %}" /></a>
+																src="{% static 'images/chili3.jpg' %}"
+																style="height: 250px;" /></a>
 														<p>Tata-salt</p>
 														<div class="stars">
 															<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -118,7 +131,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
-																src="{% static 'images/2.png' %}" /></a>
+																src="{% static 'images/cassava.jpg' %}"
+																style="height: 250px;" /></a>
 														<p>Fortune-sunflower</p>
 														<div class="stars">
 															<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -148,7 +162,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img
-																src="{% static 'images/3.png' %}" alt=" "
+																src="{% static 'images/cat-fish.png' %}"
+																style="height: 250px;" alt=" "
 																class="img-responsive" /></a>
 														<p>Aashirvaad-atta</p>
 														<div class="stars">
@@ -182,7 +197,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
-																src="{% static 'images/4.png' %}" /></a>
+																src="{% static 'images/Cow-Skin.png' %}"
+																style="height: 250px;" /></a>
 														<p>Sampann-toor-dal</p>
 														<div class="stars">
 															<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -212,7 +228,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
-																src="{% static 'images/5.png' %}" /></a>
+																src="{% static 'images/Egg.png' %}"
+																style="height: 250px;" /></a>
 														<p>Parryss-sugar</p>
 														<div class="stars">
 															<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -245,7 +262,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img
-																src="{% static 'images/6.png' %}" alt=" "
+																src="{% static 'images/food.jpg' %}"
+																style="height: 250px;" alt=" "
 																class="img-responsive" /></a>
 														<p>Saffola-gold</p>
 														<div class="stars">
@@ -291,7 +309,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
-																src="{% static 'images/7.png' %}" /></a>
+																src="{% static 'images/7.png' %}"
+																style="height: 250px;" /></a>
 														<p>Sona-masoori-rice</p>
 														<div class="stars">
 															<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -321,7 +340,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
-																src="{% static 'images/8.png' %}" /></a>
+																src="{% static 'images/yam.jpg' %}"
+																style="height: 250px;" /></a>
 														<p>Milky-mist-paneer</p>
 														<div class="stars">
 															<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -354,7 +374,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img
-																src="{% static 'images/9.png' %}" alt=" "
+																src="{% static 'images/chili.jpg' %}"
+																style="height: 250px;" alt=" "
 																class="img-responsive" /></a>
 														<p>Basmati-Rice</p>
 														<div class="stars">
@@ -388,7 +409,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
-																src="{% static 'images/10.png' %}" /></a>
+																src="{% static 'images/yam2.jpg' %}"
+																style="height: 250px;" /></a>
 														<p>Fortune-sunflower</p>
 														<div class="stars">
 															<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -418,7 +440,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
-																src="{% static 'images/12.png' %}" /></a>
+																src="{% static 'images/yamflor.jpg' %}"
+																style="height: 250px;" /></a>
 														<p>Nestle-a-slim</p>
 														<div class="stars">
 															<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -448,7 +471,8 @@
 												<div class="snipcart-item block">
 													<div class="snipcart-thumb">
 														<a href="{% url 'shop:product_list' %}"><img
-																src="{% static 'images/13.png' %}" alt=" "
+																src="{% static 'images/cassavaleaves.png' %}"
+																style="height: 250px;" alt=" "
 																class="img-responsive" /></a>
 														<p>Bread-sandwich</p>
 														<div class="stars">
@@ -580,7 +604,7 @@
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
 										<a href="{% url 'shop:product_list' %}"><img title="" alt=" "
-												src="{% static 'images/14.png' %}"></a>
+												src="{% static 'images/14.png' %}" style="height: 250px"></a>
 										<p>Fried-gram</p>
 										<div class="stars">
 											<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -609,7 +633,7 @@
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
 										<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
-												src="{% static 'images/15.png' %}"></a>
+												src="{% static 'images/15.png' %}" style="height: 250px"></a>
 										<p>Navaratan-dal</p>
 										<div class="stars">
 											<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -640,8 +664,9 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="{% url 'shop:product_list' %}"><img src="{% static 'images/16.png' %}"
-												alt=" " class="img-responsive"></a>
+										<a href="{% url 'shop:product_list' %}"><img
+												src="{% static 'images/afofood.jpg' %}" style="height: 250px" alt=" "
+												class="img-responsive"></a>
 										<p>White-peasmatar</p>
 										<div class="stars">
 											<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -670,7 +695,7 @@
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
 										<a href="{% url 'shop:product_list' %}"><img title=" " alt=" "
-												src="{% static 'images/17.png' %}"></a>
+												src="{% static 'images/basuma.jpg' %}" style="height: 250px"></a>
 										<p>Channa-dal</p>
 										<div class="stars">
 											<i class="fa fa-star blue-star" aria-hidden="true"></i>
