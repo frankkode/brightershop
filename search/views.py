@@ -4,7 +4,7 @@ from django.db.models import Q
 
 
 def search(request):
-    title = "LR Ireland | Search Results"
+    title = "BRIGHT | Search Results"
     query = request.GET.get('q')
     result = Product.objects.filter(
              Q(name__icontains=query) | Q(description__icontains=query)

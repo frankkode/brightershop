@@ -4,7 +4,7 @@ from cart.forms import CartAddProductForm
 
 
 def home(request, category_slug=None):
-    title = "LR Ireland | Home"
+    title = "BRIGHT | Home"
     products = Product.objects.filter(bestseller=True)
     category = None
     categories = Category.objects.all()
@@ -17,25 +17,25 @@ def home(request, category_slug=None):
 
 
 def salon(request):
-    title = "LR Ireland | Salon"
+    title = "BRIGHT | Salon"
     return render(request, 'shop/salon.html', {'title': title})
 
 def cleaning(request):
-    title="LR Ireland | Cleaning"
+    title="BRIGHT| Cleaning"
     return render(request, 'shop/cleaning.html', {'title':title})
 
 def service(request):
-    title = "LR Ireland | Service"
+    title = "BRIGHT | Service"
     return render(request, 'shop/services.html', {'title': title})
 
 
 def faq(request):
-    title = "LR Ireland | FAQ"
+    title = "BRIGHT | FAQ"
     return render(request, 'shop/faq.html', {'title': title})
 
 
 def about(request):
-    title = "LR Ireland | About"
+    title = "BRIGHT | About"
     return render(request, 'shop/about.html', {'title': title})
 
 
@@ -44,7 +44,7 @@ def product_list(request, category_slug=None):
     Product Catalog view to display all available products
     or to display products filtered by category.
     """
-    title = "LR Ireland | All Products"
+    title = "BRIGHT | All Products"
     categories = Category.objects.all()
     products = Product.objects.filter(available=True)
     cart_product_form = CartAddProductForm()
@@ -63,7 +63,7 @@ def product_detail(request, id, slug):
     Single Product view to display product detail page via ID.
     Slug passed in for urls building
     """
-    title = "LR Ireland | Product Detail"
+    title = "BRIGHT | Product Detail"
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
     category = None
     categories = Category.objects.all()
@@ -77,7 +77,7 @@ def product_detail(request, id, slug):
 
 
 def special_offers(request):
-    title = "LR Ireland | Special Offers"
+    title = "BRIGHT | Special Offers"
     products = Product.objects.filter(special_offer=True)
     categories = Category.objects.all()
     cart_product_form = CartAddProductForm()
