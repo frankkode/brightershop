@@ -9,7 +9,7 @@ chardet==3.0.4
 cssselect2==0.3.0
 defusedxml==0.6.0
 dj-database-url==0.5.0
-Django==3.0.14
+Django==4.2.22
 django-crispy-forms==1.9.1
 django-storages==1.9.1
 docutils==0.15.2
@@ -25,7 +25,7 @@ Pyphen==0.9.5
 python-dateutil==2.8.1
 python-dotenv==0.12.0
 pytz==2019.3
-requests==2.23.0
+requests==2.32.4
 s3transfer==0.3.3
 six==1.14.0
 sqlparse==0.3.1
